@@ -8,6 +8,6 @@ export const getDataFromToken = (req) => {
         // it also has username and email in decoded token because we set these at the login time
         return decodedToken.id;
     } catch (error) {
-        throw new Error(error.message);
+        throw new Error("ali1"+error.message);
     }
 }

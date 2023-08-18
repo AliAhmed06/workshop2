@@ -18,7 +18,7 @@ export async function GET(NextRequest){
     } catch (error) {
         console.log(error.message)
         return NextResponse.json({
-            message: error.message,
+            message: "ali2"+error.message,
             status: 500,
             success: false
         })
