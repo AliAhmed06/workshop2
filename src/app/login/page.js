@@ -19,6 +19,9 @@ const Login = () => {
       setLoading(true);
       const response =  await axios.post("/api/users/login", user);   
       
+      
+      localStorage.setItem("user", JSON.stringify(response.data.user));
+
       console.log(response);
       if(response.data.success){
         toast.success("Login Successful", { position: toast.POSITION.TOP_RIGHT});

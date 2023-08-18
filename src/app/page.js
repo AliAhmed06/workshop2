@@ -9,20 +9,7 @@ import axios from 'axios';
 
 const Page = () => {
   
-  const [user, setUser] = useState({});
-  useEffect(() => {
-    getUserData();
-  }, [])
-
-  async function getUserData(){
-    let userData = await axios.get(`/api/users/me` );
-    userData = await userData.data.user;
-    setUser(userData);    
-    // let test = await process.env.DOMAIN;
-    // console.log("ali", test);
-  }
-
-  console.log(user);
+  let user = JSON.parse(localStorage.getItem('user'));
   
   return (
     <AdminLayout>
