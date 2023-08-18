@@ -17,28 +17,8 @@ const Orders = () => {
   console.log(courses);
   return (
     <AdminLayout>
-      <h2>course list</h2>
-      <ul>
-        {courses.map((course,i) => {
-          return (
-            <li
-              className={`${course.completed ? "bg-gray-500" : "bg-gray-200"}`}
-            >
-              <span>
-                <input 
-                  type="checkbox"  
-                  checked={course.completed}
-                  onChange={(e) => toggleCourseStatus(course.id)}
-                />
-              </span>
-              <span>{course?.title}</span>
-              <button
-                onClick={() => removeCourse(course.id)}
-              >Delete</button>
-            </li>
-          )
-        })}
-      </ul>
+      <h2>Orders</h2>
+    
 
     </AdminLayout>
   )
