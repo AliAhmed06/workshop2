@@ -20,7 +20,7 @@ const Login = () => {
       const response =  await axios.post("/api/users/login", user);   
       
       
-      localStorage.setItem("user", JSON.stringify(response.data.user));
+      sessionStorage.setItem("user", JSON.stringify(response.data.user));
 
       console.log(response);
       if(response.data.success){

@@ -9,7 +9,7 @@ import axios from 'axios';
 
 const Page = () => {
   
-  let user = JSON.parse(localStorage.getItem('user'));
+  let user = JSON.parse(sessionStorage.getItem('user'));
   
   return (
     <AdminLayout>
