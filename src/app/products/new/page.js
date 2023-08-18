@@ -18,21 +18,7 @@ const NewProduct = () => {
 
   const saveHandler = async (e) => {
     e.preventDefault();
-    // if(!file) return;
     try {
-      // console.log(file);
-      // for handling image files
-      // const fileData = new FormData();
-      // fileData.set('file', file);
-      
-      // const fileRes = await fetch("/api/products/upload", {
-      //   method:"POST",
-      //   body:fileData
-      // })
-      // const fileRes = await axios.post("/api/products/upload", {fileData})
-      // if(!fileRes.success) throw new Error(await fileRes.message);
-      // console.log(fileRes);
-      
       const response =  await axios.post("/api/products", {title:name, description, price});         
       console.log(response);
       if(response.data.success){
@@ -67,13 +53,7 @@ const NewProduct = () => {
             onChange={(e) => setName(e.target.value)}
             />
         
-        <p className='font-semibold text-lg mt-3'>Product Images</p>
-        <label htmlFor="file" className='self-start border py-2 px-5 flex items-center justify-center gap-1 cursor-pointer'>
-          <AiOutlineUpload size={20} />
-          Upload File
-        </label>
-        <input type="file" id='file' className='hidden' onChange={(ev) => setFile(ev.target?.files[0])} />
-
+        
         <label htmlFor="description" className='font-semibold text-lg'>Description</label>
         <textarea id="description" className='admin_text_field h-[120px]' value={description}  onChange={(e) => setDescription(e.target.value)} ></textarea>
         
