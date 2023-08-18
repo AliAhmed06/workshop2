@@ -15,7 +15,7 @@ const Page = () => {
   }, [])
 
   async function getUserData(){
-    let userData = await axios.get(`${process.env.NEXT_PUBLIC_DOMAIN}/api/users/me` );
+    let userData = await axios.get(`/api/users/me` );
     userData = await userData.data.user;
     setUser(userData);    
     // let test = await process.env.DOMAIN;
