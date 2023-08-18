@@ -4,8 +4,10 @@ import Link from 'next/link';
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation';
 import { toast } from 'react-toastify';
+import useUserStore from '@/hooks/userStore';
 
 const Login = () => {    
+  const addUser = useUserStore((state) => state.setUser);
   const router = useRouter();
   const [user, setUser] = useState({
     email: "",
@@ -20,7 +22,10 @@ const Login = () => {
       const response =  await axios.post("/api/users/login", user);   
       
       
-      sessionStorage.setItem("user", JSON.stringify(response.data.user));
+      // zustand start
+      
+      setUser(response.data.user);
+      // zustand end
 
       console.log(response);
       if(response.data.success){
