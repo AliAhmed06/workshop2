@@ -41,7 +41,7 @@ export async function POST(NextRequest){
         }
 
         // create token
-        const token = await jwt.sign(tokenData, process.env.NEXT_PUBLIC_TOKEN_SECRET, {expiresIn: '1d'});
+        const token = await jwt.sign(tokenData, process.env.TOKEN_SECRET, {expiresIn: '1d'});
         
         // set the token into users cookie so that we can use it for further verifications
         // creating the response
